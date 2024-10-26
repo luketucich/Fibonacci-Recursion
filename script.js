@@ -24,10 +24,3 @@ function fibsRec(n) {
   prevFib.push(nextFib);
   return prevFib;
 }
-
-console.log(fibsRec(0));
-console.log(fibsRec(1));
-console.log(fibsRec(2));
-console.log(fibsRec(3));
-console.log(fibsRec(4));
-console.log(fibsRec(5));
