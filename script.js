@@ -13,8 +13,21 @@ function fibs(n) {
   return fib;
 }
 
-console.log(fibs(0));
-console.log(fibs(1));
-console.log(fibs(2));
-console.log(fibs(4));
-console.log(fibs(8));
+// Recursive Solution
+function fibsRec(n) {
+  if (n === 0) return [];
+  if (n === 1) return [0];
+  if (n === 2) return [0, 1];
+
+  const prevFib = fibsRec(n - 1);
+  const nextFib = prevFib[prevFib.length - 2] + prevFib[prevFib.length - 1];
+  prevFib.push(nextFib);
+  return prevFib;
+}
+
+console.log(fibsRec(0));
+console.log(fibsRec(1));
+console.log(fibsRec(2));
+console.log(fibsRec(3));
+console.log(fibsRec(4));
+console.log(fibsRec(5));
