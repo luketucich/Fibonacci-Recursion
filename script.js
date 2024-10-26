@@ -1,20 +1,20 @@
 // Iterative Solution
 function fibs(n) {
   const fib = [0, 1];
-  const res = [];
 
-  for (let i = 0; i < n; i++) {
-    if (res.length < 1) {
-      res.push(fib[0]);
-    } else if (res.length < 2) {
-      res.push(fib[1]);
-    } else {
-      res.push(res[i - 2] + res[i - 1]);
-    }
+  if (n === 0) return [];
+  if (n === 1) return [fib[0]];
+  if (n === 2) return fib;
+
+  for (let i = 2; i < n; i++) {
+    fib.push(fib[i - 2] + fib[i - 1]);
   }
 
-  return res;
+  return fib;
 }
 
-console.log(fibs(5));
+console.log(fibs(0));
+console.log(fibs(1));
+console.log(fibs(2));
+console.log(fibs(4));
 console.log(fibs(8));
